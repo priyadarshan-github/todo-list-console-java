@@ -1,4 +1,4 @@
-package com.example.todolistconsolejava;
+package com.priyadarshan.todolistconsolejava.todolistconsolejava;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
