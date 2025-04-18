@@ -66,12 +66,7 @@ public class Task {
         this.priority = priority;
     }
 
-    public void add(Task task) {
-        //Define the logic to add a task
-        // For example, you might want to add the task to a list or database
-        // Here, we will just print the task details to the console
-        System.out.println("Task added: " + task.getName());
-    }
+
 
     @Override
     public String toString() {

@@ -9,6 +9,7 @@ public class Main {
         // For example:
         boolean running= true;
         Scanner scanner= new Scanner(System.in);
+        ToDoManager manager=new ToDoManager();
 
         while(running){
             System.out.println("\nWelcome to the ToDo List Console Application!");
@@ -37,7 +38,11 @@ public class Main {
                     System.out.print("Enter task priority (High, Medium, Low): ");
                     String priority = scanner.nextLine();
                     Task task = new Task(String.valueOf(System.currentTimeMillis()), name, description, status, dueDate, priority);
-
+                    manager.addTask(task);
+                    break;
+                case "2":
+                    System.out.println("Listing all tasks...");
+                    manager.listTasks();
                     break;
 
                 case "6":
