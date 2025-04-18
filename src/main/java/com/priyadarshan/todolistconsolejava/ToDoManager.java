@@ -14,6 +14,10 @@ public class ToDoManager {
 
         }
 
+        public List<Task> getTasks() {
+                return tasks;
+        }
+
         public void listTasks() {
                 if (tasks.isEmpty()) {
                         System.out.println("No tasks available.");
@@ -26,5 +30,13 @@ public class ToDoManager {
 
         }
 
+        public Task getTaskById(String id){
+                for(Task task:tasks){
+                        if(task.getId().equals(id)){
+                                return task;
+                        }
+                }
+                return null;
 
+        }
 }

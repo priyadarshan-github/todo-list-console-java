@@ -45,6 +45,51 @@ public class Main {
                     manager.listTasks();
                     break;
 
+                case "3":
+                    System.out.println("Marking the task as completed...");
+                    System.out.println("Enter the task ID to mark as completed:");
+                    String taskId =scanner.nextLine();
+                    Task taskToComplete=manager.getTaskById(taskId);
+                    if(taskToComplete!=null){
+                        taskToComplete.setStatus(TaskStatus.COMPLETED);
+                        System.out.println("Task marked as completed.");
+                    }
+                    else{
+                        System.out.println("Task not found.");
+                    }
+                    break;
+
+                case "4":
+                    System.out.println("Updating task status...");
+                    System.out.println("Enter the task ID to mark as updated:");
+                    String taskUpdId =scanner.nextLine();
+                    Task taskToUpdate=manager.getTaskById(taskUpdId);
+                    if(taskToUpdate!=null){
+                        System.out.println("Enter the new status (PENDING, IN_PROGRESS, COMPLETED):");
+                        String newStatusInput=scanner.nextLine();
+                        TaskStatus newStatus=TaskStatus.valueOf(newStatusInput.toUpperCase());
+                        taskToUpdate.setStatus(newStatus);
+                    }
+                    else{
+                        System.out.println("Task not found.");
+                    }
+                    break;
+
+                case "5":
+                    System.out.println("Deleting a task...");
+                    System.out.println("Enter the task ID to delete:");
+                    String taskDelId =scanner.nextLine();
+                    Task taskToDelete=manager.getTaskById(taskDelId);
+                    if(taskToDelete!=null){
+                        manager.getTasks().remove(taskToDelete);
+                        System.out.println("Task deleted successfully.");
+                    }
+                    else{
+                        System.out.println("Task not found.");
+                    }
+                    break;
+
+
                 case "6":
                     running = false;
                     System.out.println("Exiting the application. Goodbye!");
