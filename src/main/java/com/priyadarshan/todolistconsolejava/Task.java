@@ -9,6 +9,9 @@ public class Task {
     private String dueDate;
     private String priority;
 
+    public Task() {
+    }
+
     public String getId() {
         return id;
     }
