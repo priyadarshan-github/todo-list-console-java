@@ -20,6 +20,8 @@ public class ToDoManager {
             task.setId(String.valueOf(nextId++));
             tasks.add(task);
             System.out.println("Task added successfully!");
+            saveTaskToFile();
+
 
         }
 
